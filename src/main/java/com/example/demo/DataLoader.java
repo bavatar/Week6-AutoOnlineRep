@@ -56,9 +56,13 @@ public class DataLoader implements CommandLineRunner {
         car.setMsrp(27000);
         car.setColor("Red");
         car.setCarImage("https://res.cloudinary.com/ascension-enterprises/image/upload/v1570810308/Nissan_dxg0fq.jpg");
+        car.setCategory(category);
         cars = new HashSet<Car>();
-        cars.add(car);
+
         category.setCars(cars);
+        cars.add(car);
+        categoryRepository.save(category);
+
         carRepository.save(car);
         categoryRepository.save(category);
 
@@ -73,9 +77,13 @@ public class DataLoader implements CommandLineRunner {
         car.setMsrp(127000);
         car.setColor("blue");
         car.setCarImage("https://res.cloudinary.com/ascension-enterprises/image/upload/v1570810437/porsche9116_so3vzo.jpg");
+        car.setCategory(category);
         cars = new HashSet<Car>();
-        cars.add(car);
+
         category.setCars(cars);
+        cars.add(car);
+        categoryRepository.save(category);
+
         carRepository.save(car);
         categoryRepository.save(category);
     }
